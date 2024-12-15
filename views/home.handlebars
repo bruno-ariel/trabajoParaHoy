@@ -1,0 +1,7 @@
+<h1>{{this.data.title}}</h1>
+<h2>estamos en el layout {{this.layout}}</h2>
+{{{this.data.html}}}
+{{#each this.data.workspaces}}
+    <li>{{this.name}}</li>
+{{/each}}
+<a href="/products/new"> crear producto </a>

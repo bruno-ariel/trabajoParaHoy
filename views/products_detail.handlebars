@@ -1,0 +1,15 @@
+<h2> lista detallada de productos </h2>
+
+
+{{#if this.data.products_info.is_sale}}
+    <span> Este producto esta en oferta  </span>
+    <h4 class="offer"> llevandolo hoy pagas {{ this.data.products_info.offer }} totales !!  </h4>
+    {{else}}
+    <span> Este producto no tiene ningun descuento </span>
+{{/if}}
+
+<p>Descripcion : {{ this.data.products_info.description }}</p>
+
+<p>Precio : {{ this.data.products_info.price }}</p>
+
+<p>Stock : {{ this.data.products_info.stock }}</p>

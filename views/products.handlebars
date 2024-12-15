@@ -1,0 +1,12 @@
+<h1>{{this.data.title}}</h1>
+<h1> productos en stock : {{this.layout}}</h1>
+{{#each this.data.products}}
+    <div>
+        <h2>{{this.name}}</h2>
+        <span><b>Precio : </b>{{this.price}}</span>
+        <p>{{this.description}}</p>
+        <span>Quedan : {{this.stock}} unidades en stock !! </span>
+        <a href="/products/{{this.id}}"> Ver detalle </a>
+        <hr>
+    </div>
+{{/each}}
