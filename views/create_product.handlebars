@@ -1,19 +1,19 @@
 <h2>Crear producto </h2>
 <form action="/products/new" method="post">
     <div>
-        <label for="name"> put product name </label>
+        <label for="name"> nombre del producto </label>
         <input type="text" name="product_name" id="product_name">
         {{#if this.data.errors.product_name}}
             <span> {{this.data.errors.product_name}} </span> 
         {{/if}}
     </div>
     <div>
-        <label for="description"> put product description </label>
+        <label for="description"> Qué producto es? </label>
         <input type="text" name="product_description" id="product_description">
     </div>
     <div>
-        <label for="price"> put product price </label>
-        <input type="number" name="product_price" id="product_price">
+        <label for="price">  </label>
+        <input type="text" name="product_price" id="product_price">
         {{#if this.data.errors.product_price}}
             <span> {{this.data.errors.product_price}} </span> 
         {{/if}}

@@ -124,10 +124,19 @@ app.post("/products/new", (req, res) => {
     else if (products.find(products => products.name == product_name) ) {
         errors_state.product_name = "El producto ya existe"
     }
-    if (product_price < 0) {
+    if (product_description > 10){
+        errors_state.product_description = "la descripcion no puede estar vacia"
+    }
+    else if (products.find(products => products.description == product_description) ) {
+        errors_state.product_description = "esa descripcion ya esta siendo utilizada"
+    }
+    if (product_price < 1) {
         errors_state.product_price = "El precio no puede ser 0"
     }
-    if (product_stock < 0) {
+    else if (isNaN(product_price)) {
+        errors_state.product_price = "el precio debe ser un numero"
+    }
+    if (product_stock < 1) {
         errors_state.product_stock = "tiene que haber un stock"
     }
     // aca validamos si hay errores
@@ -151,9 +160,9 @@ app.post("/products/new", (req, res) => {
     const new_product = {
         id: products.length + 1,
         name: product_name,
-        price: 0,
-        description: "",
-        stock: 0,
+        price: product_price,
+        description: product_description,
+        stock: product_stock,
         is_sale: false,
         offer: 0
     }
